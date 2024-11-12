@@ -1,0 +1,16 @@
+
+POST http://localhost:3009/api/add
+Content-Type: application/json
+
+{   "name": "Denis",
+    "number": "8298234012"
+}
+
+#####
+PUT http://localhost:3009/api/update/6729dcd2ec91c6285b29fa4b
+Content-Type: application/json
+
+{
+    "name": "Maria Karolina",
+    "number":"92-76983212"
+}
