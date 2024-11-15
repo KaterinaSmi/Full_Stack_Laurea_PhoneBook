@@ -14,3 +14,7 @@ Content-Type: application/json
     "name": "Maria Karolina",
     "number":"92-76983212"
 }
+
+#####
+DELETE http://localhost:3009/api/delete/6729dcd2ec91c6285b29fa4b
+Content-Type: application/json

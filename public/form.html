@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h2>Enter your data</h2>
+<form id="form" method="POST" action="/api/add">
+    <label for="name">Name: </label>
+    <input type="text" name="name" id="name" required>
+
+    <label for="number">Number: </label>
+    <input type="text" name="number" id="number" required>
+</form>
+<div id="messageDiv"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('form')
+            const messageDiv = document.getElementById('messageDiv')
+
+            form.addEventListener('submit', () => {
+                event.preventDefault()
+
+                const name = document.getElementById('name').value
+                const number = document.getElementById('number').value
+                
+                axios.post('api/add',{name,number}
+                    .then(response => {
+                        messageDiv.textContent = 'Person successfully added'
+                    })
+                    .catch(error => {
+                        console.error(error)
+                    })
+                )
+            })
+        })
+    </script>
+</body>
+</html>

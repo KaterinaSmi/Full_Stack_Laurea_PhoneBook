@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-require('dotenv').config();
+require('dotenv').config()
 
 const app = express()
 
@@ -35,9 +35,10 @@ app.get('/api/:id',(req,res) => {
 
 app.post('/api/add',(req,res) => {
   const body = req.body
-  console.log("Request Body:", body);
+  console.log('Request Body:', body)
+  res.send()
   if (!body.name || !body.number) {
-    return res.status(400).json({ error: 'Name and number are required' });
+    return res.status(400).json({ error: 'Name and number are required' })
   }
   if(body.name.length < 3) {
     return res.status(400).json({ error: `Person validation failed: "${body.name}" is shorter than 3 symbols (allowed length)` })
